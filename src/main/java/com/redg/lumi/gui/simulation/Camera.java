@@ -4,6 +4,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.transform.Rotate;
 
@@ -17,7 +18,7 @@ public class Camera extends PerspectiveCamera {
     private final DoubleProperty angleX = new SimpleDoubleProperty(0);
     private final DoubleProperty angleY = new SimpleDoubleProperty(0);
 
-    public Camera(Scene scene, Space space) {
+    public Camera(SubScene scene, Space space) {
         super(true);
 
         Rotate xRotate;
