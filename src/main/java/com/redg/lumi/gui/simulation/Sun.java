@@ -1,11 +1,11 @@
 package com.redg.lumi.gui.simulation;
 
-import javafx.scene.AmbientLight;
+import javafx.scene.PointLight;
 
-public class Sun extends AmbientLight {
+public class Sun extends PointLight {
     public Sun() {
-        this.setTranslateX(30);
-        this.setTranslateY(-30);
-        this.setTranslateZ(-50);
+        this.setTranslateX(6371000 * 2);
+        this.setTranslateY(-6371000 * 2);
+        this.setTranslateZ(-6371000 * 2);
     }
 }
