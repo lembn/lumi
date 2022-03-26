@@ -7,4 +7,6 @@ module com.redg.lumi {
 
     opens com.redg.lumi to javafx.fxml;
     exports com.redg.lumi;
+    exports com.redg.lumi.dataProcessing;
+    opens com.redg.lumi.dataProcessing to javafx.fxml;
 }
