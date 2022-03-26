@@ -1,4 +1,4 @@
-package com.redg.lumi.data;
+package com.redg.lumi.dataProcessing;
 
 public class Position {
     private double x;
