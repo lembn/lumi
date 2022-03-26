@@ -13,15 +13,14 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class MainView extends Stage {
-    private static final int HIEGHT = 850;
+    private static final int HEIGHT = 850;
     private static final int WIDTH = 1600;
 
     public MainView() {
         // setup 3d container
         StackPane root3d = new StackPane();
-        SubScene subScene = new SubScene(root3d, WIDTH, HIEGHT,true, SceneAntialiasing.BALANCED);
+        SubScene subScene = new SubScene(root3d, WIDTH, HEIGHT,true, SceneAntialiasing.BALANCED);
         SimulationView simView = new SimulationView(subScene);
-        subScene.setCamera(simView.getCamera());
         root3d.getChildren().add(simView);
 
         // setup UI container
@@ -32,7 +31,7 @@ public class MainView extends Stage {
         root.requestFocus();
 
         // setup main scene
-        Scene scene = new Scene(root, WIDTH, HIEGHT);
+        Scene scene = new Scene(root, WIDTH, HEIGHT);
         scene.getStylesheets().add(getClass().getResource("styles.css").toString());
 
         this.setScene(scene);

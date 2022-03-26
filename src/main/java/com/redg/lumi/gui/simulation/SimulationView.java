@@ -16,16 +16,12 @@ public class SimulationView extends AnchorPane {
 
     public SimulationView(SubScene scene) {
         camera = new Camera(scene, space);
+        scene.setCamera(camera);
 
         envisatSatellite = new Satellite(new Position(-59, -31, 84));
         globalstarSatellite = new Satellite(new Position(0, 0, -125));
 
         space.add(earth, sun, envisatSatellite, globalstarSatellite);
-
         this.getChildren().add(space);
-    }
-
-    public Camera getCamera() {
-        return camera;
     }
 }
