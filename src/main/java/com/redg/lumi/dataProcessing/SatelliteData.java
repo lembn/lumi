@@ -2,10 +2,6 @@ package com.redg.lumi.dataProcessing;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-;import javafx.beans.property.Property;
-import javafx.geometry.Point3D;
-import javafx.scene.transform.Rotate;
-import javafx.scene.transform.Transform;
 import javafx.util.Duration;
 
 public class SatelliteData {
@@ -14,7 +10,6 @@ public class SatelliteData {
     public SatelliteData() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0.01), e -> {
-                    //this.position.getXProperty().set(this.position.getXProperty().get() + 20);
                     rotatePointIn2D(0.0, 0.0, 0.01, this.position);
                 })
         );
@@ -23,7 +18,7 @@ public class SatelliteData {
         timeline.play();
     }
 
-    public void rotatePointIn2D(double cx, double cy, double angle, Position p)
+    private void rotatePointIn2D(double cx, double cy, double angle, Position p)
     {
         double s = Math.sin(angle);
         double c = Math.cos(angle);
