@@ -10,7 +10,9 @@ public class MainView extends Stage {
     public MainView() {
         BorderPane root = new BorderPane();
 
-        Scene scene = new Scene(root, 800, 600, Color.BLACK);
+        Scene scene = new Scene(root, 800, 600, true);
+
+        scene.setFill(Color.BLACK);
 
         root.setCenter(new SimulationView(scene));
 

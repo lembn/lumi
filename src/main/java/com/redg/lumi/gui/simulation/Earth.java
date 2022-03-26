@@ -7,7 +7,7 @@ import javafx.scene.shape.Sphere;
 
 public class Earth extends Sphere {
     public Earth() {
-        this.setRadius(50);
+        this.setRadius(6371000);
         this.setMaterial(new PhongMaterial(Color.BLUE));
     }
 }
