@@ -1,21 +1,29 @@
 package com.redg.lumi.dataProcessing;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroundStation extends SimulationChild{
-    private int stationID;
-    private double longitude;
-    private double latitude;
-    private double altitude;
-    private List<SatallitePass> stationReadings;
+
+    public int stationID;
+
+    public double longitude;
+
+    public double latitude;
+
+    public double altitude;
+
+
+    public ArrayList<SatellitePass> stationReadings;
+
+    //private List<SatellitePass> stationReadings;
 
     //private ArrayList<Pass> passes;
-    public GroundStation(int givenID, double givenLon, double givenLat, double givenAlt, List<SatallitePass> givenReadings){
-        this.stationID = givenID;
-        this.longitude = givenLon;
-        this.latitude = givenLat;
-        this.altitude = givenAlt;
-        this.stationReadings = givenReadings;
+    public GroundStation(@JsonProperty("ID") int givenID , @JsonProperty("lon") int lon,@JsonProperty("lat") int lat,
+                         @JsonProperty("alt") int alt ,@JsonProperty("passes" ) ArrayList<SatellitePass> stationReadings){
+        stationReadings = new ArrayList<>();
     }
 
     public int getStationID(){
@@ -34,7 +42,7 @@ public class GroundStation extends SimulationChild{
         return this.altitude;
     }
 
-    public List<SatallitePass> getStationReadings(){
+    public ArrayList<SatellitePass> getStationReadings(){
         return this.stationReadings;
     }
 }

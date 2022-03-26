@@ -4,60 +4,64 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
 public class SatellitePass {
-    @JsonProperty("azimuth")
+
     public final double[] azimuth;
 
-    @JsonProperty("elevation")
+
     public final double[] elevation;
 
-    @JsonProperty("time")
+
     public final double[] time;
 
-    @JsonProperty("range residuals")
+
     public final double[] rangeResiduals;
 
-    @JsonProperty("q")
+
     public final double[][] q;
 
-    @JsonProperty("A_b2i")
+
     public final double[][][]  A_b2i;
 
-    @JsonProperty("start datetime")
-    public final Date satTime;
 
-    @JsonProperty("pos")
+    public final String satTime;
+
+
     public final double[][] positions;
 
-    @JsonProperty("vel")
+
     public final double[][] velocities;
 
-    @JsonProperty("w")
+
     public final double[][] angularVelocities;
 
-    @JsonProperty("pitch")
+
     public final double[] pitch;
 
-    @JsonProperty("roll")
+
     public final double[] roll;
 
-    @JsonProperty("yaw")
+
     public final double[] yaw;
 
-    @JsonProperty("gs vec")
+
     public final double[][] groundStationLoc;
 
-    @JsonProperty("rr vec")
+
     public final double[][] laserPointer;
 
-    @JsonProperty("range")
+
     public final double[] range;
 
     @JsonCreator
     public SatellitePass
-            (double[] azimuth,double[] elevation, double[] time,double[] rangeResiduals,double[][] q,
-            double[][][] A_b2i,Date satTime,double[][] positions,double[][] velocities,double[][] angularVelocities,
-             double[] pitch,double[] roll,double[] yaw,double[][] groundStationLoc, double[][] laserPointer,
-             double[] range) {
+            (@JsonProperty("azimuth") double[] azimuth, @JsonProperty("elevation") double[] elevation, @JsonProperty("time") double[] time,
+             @JsonProperty("range residual") double[] rangeResiduals, @JsonProperty("q") double[][] q,
+             @JsonProperty("A_b2i") double[][][] A_b2i,@JsonProperty("start datetime") String satTime, @JsonProperty("pos") double[][] positions, @JsonProperty("vel") double[][] velocities,
+             @JsonProperty("w") double[][] angularVelocities, @JsonProperty("pitch") double[] pitch,
+             @JsonProperty("roll") double[] roll, @JsonProperty("yaw") double[] yaw,
+             @JsonProperty("gs vec") double[][] groundStationLoc, @JsonProperty("rr vec") double[][] laserPointer,
+             @JsonProperty("range") double[] range) {
+
         this.azimuth = azimuth;
         this.elevation = elevation;
         this.time = time;
@@ -76,6 +80,4 @@ public class SatellitePass {
         this.range = range;
 
     }
-
-
 }
