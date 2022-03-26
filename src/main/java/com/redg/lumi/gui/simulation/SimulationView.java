@@ -17,7 +17,6 @@ public class SimulationView extends AnchorPane {
         envisatSatellite = new Satellite(new Position(-59, -31, 84));
         globalstarSatellite = new Satellite(new Position(0, 0, -125));
 
-
         scene.setCamera(camera);
 
         space.add(earth, sun, envisatSatellite, globalstarSatellite);
