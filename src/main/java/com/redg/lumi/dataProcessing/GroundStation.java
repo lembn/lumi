@@ -17,4 +17,24 @@ public class GroundStation extends SimulationChild{
         this.altitude = givenAlt;
         this.stationReadings = givenReadings;
     }
+
+    public int getStationID(){
+        return this.stationID;
+    }
+
+    public double getLongitude(){
+        return this.longitude;
+    }
+
+    public double getLatitude(){
+        return this.latitude;
+    }
+
+    public double getAltitude(){
+        return this.altitude;
+    }
+
+    public List<SatallitePass> getStationReadings(){
+        return this.stationReadings;
+    }
 }
