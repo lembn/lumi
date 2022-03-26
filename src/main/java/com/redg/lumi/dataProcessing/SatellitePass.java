@@ -55,7 +55,7 @@ public class SatellitePass {
     @JsonCreator
     public SatellitePass
             (@JsonProperty("azimuth") double[] azimuth, @JsonProperty("elevation") double[] elevation, @JsonProperty("time") double[] time,
-             @JsonProperty("range residual") double[] rangeResiduals, @JsonProperty("q") double[][] q,
+             @JsonProperty("range residuals") double[] rangeResiduals, @JsonProperty("q") double[][] q,
              @JsonProperty("A_b2i") double[][][] A_b2i,@JsonProperty("start datetime") String satTime, @JsonProperty("pos") double[][] positions, @JsonProperty("vel") double[][] velocities,
              @JsonProperty("w") double[][] angularVelocities, @JsonProperty("pitch") double[] pitch,
              @JsonProperty("roll") double[] roll, @JsonProperty("yaw") double[] yaw,

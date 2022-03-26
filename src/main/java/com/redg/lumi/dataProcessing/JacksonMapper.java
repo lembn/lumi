@@ -13,7 +13,6 @@ public class JacksonMapper {
     public static void main(String args[])
     {
         ObjectMapper mapper = new ObjectMapper();
-        String inputJson = String.valueOf(JacksonMapper.class.getResource());
         //String inputJson = inputURL.toString();
         //String inputJson = "resources\\com\\redg\\lumi\\dataProcessing\\envisat_passes.json";
         try{
@@ -21,7 +20,7 @@ public class JacksonMapper {
             mapper = new ObjectMapper();
 
                 GroundStation[] stations;
-                stations = mapper.readValue(new File(inputJson),GroundStation[].class);
+                stations = mapper.readValue(JacksonMapper.class.getResource("envisat_passes.json"),GroundStation[].class);
                 System.out.println((stations[0].stationReadings.get(0).azimuth));
 
         }catch (JsonMappingException e) {
