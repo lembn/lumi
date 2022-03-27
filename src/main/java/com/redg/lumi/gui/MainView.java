@@ -17,17 +17,11 @@ public class MainView extends Stage {
     private static final int WIDTH = 1600;
 
     public MainView() {
-        // setup 3d container
-        StackPane root3d = new StackPane();
-        SubScene subScene = new SubScene(root3d, WIDTH, HEIGHT,true, SceneAntialiasing.BALANCED);
-        SimulationView simView = new SimulationView(subScene);
-        root3d.getChildren().add(simView);
-
         // setup UI container
         StackPane root = new StackPane();
         root.setAlignment(Pos.CENTER_LEFT);
         root.setPadding(new Insets(10, 10, 10, 10));
-        root.getChildren().addAll(root3d, new UI());
+        root.getChildren().addAll(new UI());
         root.requestFocus();
 
         // setup main scene
