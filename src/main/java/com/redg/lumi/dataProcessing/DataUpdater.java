@@ -6,18 +6,18 @@ import javafx.util.Duration;
 
 public class DataUpdater {
     private GroundStation[] stations;
+    private SatelliteState satelliteState;
     private SatelliteData satelliteData;
 
-    private int stationIndex = 0;
-    private int passesIndex = 1;
-    private int positionsIndex = 0;
+    private int step = 0;
 
     public DataUpdater(JacksonMapper jacksonMapper, SatelliteData satelliteData) {
         this.stations = jacksonMapper.getStations();
         this.satelliteData = satelliteData;
+        this.satelliteState = jacksonMapper.getSatelliteState();
 
         Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(0.0001), e -> {
+                new KeyFrame(Duration.seconds(0.001), e -> {
                     update();
                 })
         );
@@ -29,28 +29,15 @@ public class DataUpdater {
     }
 
     private void update() {
-        double x = stations[stationIndex].passes[passesIndex].positions[positionsIndex][0];
-        double y = stations[stationIndex].passes[passesIndex].positions[positionsIndex][1];
-        double z = stations[stationIndex].passes[passesIndex].positions[positionsIndex][2];
+        double x = satelliteState.position[step][0];
+        double y = satelliteState.position[step][1];
+        double z = satelliteState.position[step][2];
 
-        positionsIndex++;
+        step++;
 
-        // bound checks
-        if (positionsIndex >= stations[stationIndex].passes[passesIndex].positions.length) {
-            positionsIndex = 0;
-            stationIndex++;
+        if (step >= satelliteState.position.length) {
+            step = 0;
         }
-        if (stationIndex >= stations.length) {
-            stationIndex = 0;
-            passesIndex++;
-        }
-        if (passesIndex >= stations[stationIndex].passes.length) {
-            stationIndex = 0;
-            passesIndex = 1;
-            positionsIndex = 0;
-        }
-
-        //System.out.println(String.format("Station: %d, Pass: %d, Position: %d", stationIndex, passesIndex, positionsIndex));
 
         x *= 0.000015;
         y *= 0.000015;

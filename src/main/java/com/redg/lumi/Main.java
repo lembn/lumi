@@ -13,8 +13,8 @@ public class Main extends Application {
         SatelliteData globalstarData = new SatelliteData();
 
         MainView mainView = new MainView(envisatData, globalstarData);
-        new DataUpdater(new JacksonMapper("envisat_passes.json"), envisatData);
-        //new DataUpdater(new JacksonMapper("globalstar_passes.json"), globalstarData);
+        new DataUpdater(new JacksonMapper("envisat"), envisatData);
+        new DataUpdater(new JacksonMapper("globalstar"), globalstarData);
     }
 
     public static void main(String[] args) {
