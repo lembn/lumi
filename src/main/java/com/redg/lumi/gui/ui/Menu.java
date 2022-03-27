@@ -2,6 +2,8 @@ package com.redg.lumi.gui.ui;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Shadow;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 

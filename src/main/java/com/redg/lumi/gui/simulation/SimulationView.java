@@ -3,6 +3,7 @@ package com.redg.lumi.gui.simulation;
 import com.redg.lumi.dataProcessing.Position;
 import com.redg.lumi.dataProcessing.SatelliteData;
 import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.layout.AnchorPane;
 
 public class SimulationView extends AnchorPane {
@@ -13,7 +14,7 @@ public class SimulationView extends AnchorPane {
     private Satellite envisatSatellite;
     private Satellite globalstarSatellite;
 
-    public SimulationView(Scene scene, SatelliteData envisatData, SatelliteData globalstarData) {
+    public SimulationView(SubScene scene, SatelliteData envisatData, SatelliteData globalstarData) {
 
         camera = new Camera(scene, space);
         envisatSatellite = new Satellite(envisatData);

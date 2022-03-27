@@ -18,7 +18,7 @@ public class Camera extends PerspectiveCamera {
     private final DoubleProperty angleX = new SimpleDoubleProperty(0);
     private final DoubleProperty angleY = new SimpleDoubleProperty(0);
 
-    public Camera(Scene scene, Space space) {
+    public Camera(SubScene scene, Space space) {
         super(true);
 
         Rotate xRotate;

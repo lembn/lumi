@@ -4,7 +4,7 @@
 
 .text {
     -fx-font-family: 'Red Hat Mono Light';
-
+    -fx-text-fill: white;
 }
 
 .title {
@@ -16,4 +16,10 @@
     -fx-border-color: black;
     -fx-border-radius: 5;
     -fx-border-width: 3;
+    -fx-background-color: #A2A7A5;
+    -fx-background-radius: 7;
+}
+
+.background {
+    -fx-background-color: black;
 }

@@ -33,7 +33,7 @@ public class UI extends VBox {
     private boolean menuOpen;
 
     public UI() {
-        setPadding(new Insets(5, 15, 0, 0));
+        setPadding(new Insets(10, 10, 10, 10));
         setSpacing(12);
         setAlignment(Pos.TOP_LEFT);
         setMaxWidth(250);

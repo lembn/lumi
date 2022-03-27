@@ -10,5 +10,9 @@ public class Earth extends Sphere {
         this.setRadius(100);
         this.setMaterial(new PhongMaterial(Color.BLUE));
         this.setDepthTest(DepthTest.ENABLE);
+
+        setTranslateX(0);
+        setTranslateY(0);
+        setTranslateZ(0);
     }
 }
