@@ -16,8 +16,6 @@ public class JacksonMapper {
 
             state = mapper.readValue(JacksonMapper.class.getResource(satelliteName + "_state.json"), SatelliteState.class);
             stations = mapper.readValue(JacksonMapper.class.getResource(satelliteName + "_passes.json"), GroundStation[].class);
-
-            System.out.println((Arrays.toString(stations[0].passes[1].azimuth)));
         } catch (JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonProcessingException e) {
