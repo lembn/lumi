@@ -1,7 +1,6 @@
 package com.redg.lumi.gui.simulation;
 
 import javafx.scene.DepthTest;
-import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
