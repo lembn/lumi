@@ -36,6 +36,7 @@ public class UI extends VBox {
         setPadding(new Insets(10, 10, 10, 10));
         setSpacing(12);
         setAlignment(Pos.TOP_LEFT);
+        setMaxHeight(280);
         setMaxWidth(250);
 
         ImageView hamburger = new ImageView(HAMBURGER_ICON);

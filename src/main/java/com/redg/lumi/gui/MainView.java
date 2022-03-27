@@ -3,18 +3,13 @@ package com.redg.lumi.gui;
 import com.redg.lumi.dataProcessing.SatelliteData;
 import com.redg.lumi.gui.simulation.SimulationView;
 import com.redg.lumi.gui.ui.UI;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.SceneAntialiasing;
 import javafx.scene.SubScene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import java.util.Stack;
 
 public class MainView extends Stage {
     private static final int HEIGHT = 850;
