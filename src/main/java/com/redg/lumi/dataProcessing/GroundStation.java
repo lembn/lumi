@@ -34,4 +34,8 @@ public class GroundStation extends SimulationChild{
     public double getAltitude(){
         return this.altitude;
     }
+
+    public SatellitePass[] getPasses() {
+        return this.passes;
+    }
 }

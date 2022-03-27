@@ -1,6 +1,8 @@
 package com.redg.lumi.gui.simulation;
 
 import com.redg.lumi.dataProcessing.SatelliteData;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.DepthTest;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;

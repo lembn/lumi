@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class JacksonMapper {
-    public JacksonMapper() {
+    private GroundStation[] stations;
+
+    public JacksonMapper(String path) {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
-            GroundStation[] stations;
-            stations = mapper.readValue(JacksonMapper.class.getResource("envisat_passes.json"),GroundStation[].class);
+            stations = mapper.readValue(JacksonMapper.class.getResource(path), GroundStation[].class);
 
             System.out.println((Arrays.toString(stations[0].passes[1].azimuth)));
         } catch (JsonMappingException e) {
@@ -23,4 +24,6 @@ public class JacksonMapper {
             e.printStackTrace();
         }
     }
+
+    public GroundStation[] getStations() { return this.stations; }
 }

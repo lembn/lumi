@@ -13,9 +13,7 @@ public class SimulationView extends AnchorPane {
     private Satellite envisatSatellite;
     private Satellite globalstarSatellite;
 
-    public SimulationView(Scene scene) {
-        SatelliteData envisatData = new SatelliteData();
-        SatelliteData globalstarData = new SatelliteData();
+    public SimulationView(Scene scene, SatelliteData envisatData, SatelliteData globalstarData) {
 
         camera = new Camera(scene, space);
         envisatSatellite = new Satellite(envisatData);
