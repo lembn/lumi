@@ -1,10 +1,9 @@
 package com.redg.lumi.gui.simulation;
 
 import com.redg.lumi.dataProcessing.Position;
+import com.redg.lumi.dataProcessing.SatelliteData;
 import javafx.scene.Scene;
-import javafx.scene.SubScene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
 public class SimulationView extends AnchorPane {
     private Camera camera;
@@ -14,14 +13,16 @@ public class SimulationView extends AnchorPane {
     private Satellite envisatSatellite;
     private Satellite globalstarSatellite;
 
-    public SimulationView(SubScene scene) {
+    public SimulationView(Scene scene, SatelliteData envisatData, SatelliteData globalstarData) {
+
         camera = new Camera(scene, space);
+        envisatSatellite = new Satellite(envisatData);
+        globalstarSatellite = new Satellite(globalstarData);
+
         scene.setCamera(camera);
 
-        envisatSatellite = new Satellite(new Position(-59, -31, 84));
-        globalstarSatellite = new Satellite(new Position(0, 0, -125));
-
         space.add(earth, sun, envisatSatellite, globalstarSatellite);
+
         this.getChildren().add(space);
     }
 }
